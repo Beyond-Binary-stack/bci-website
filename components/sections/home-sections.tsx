@@ -48,8 +48,6 @@ const statIcons = {
   award: Award,
 };
 
-const heroVideoUrl = "/BC/hero.mp4";
-
 const campusTourVideoUrl = "/BC/Vedio.mp4";
 
 function MediaCard({
@@ -70,6 +68,8 @@ function MediaCard({
           src={image}
           alt={title}
           fill
+          sizes="(max-width: 768px) 100vw, 33vw"
+          quality={70}
           className="object-cover transition duration-500 group-hover:scale-105"
         />
       </div>
@@ -78,54 +78,6 @@ function MediaCard({
         <p className="text-sm leading-7 text-slate-600 sm:text-base">{description}</p>
       </div>
     </article>
-  );
-}
-
-export function HeroSection() {
-  return (
-    <section id="hero" className="relative isolate overflow-hidden">
-      <div className="absolute inset-0">
-        <video
-          className="h-full w-full object-cover"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-        >
-          <source src={heroVideoUrl} type="video/mp4" />
-        </video>
-        <div className="absolute inset-0 bg-[#081225]/74" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(181,48,67,0.28),_transparent_32%)]" />
-      </div>
-      <nav className="absolute left-0 top-0 z-10 flex items-center gap-3 px-6 py-4 sm:px-10 lg:px-12">
-        <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full border border-white/20 bg-white/95 shadow-lg shadow-black/20">
-          <Image src={branding.logo} alt={branding.schoolName} fill className="object-contain p-2" priority />
-        </div>
-        <span className="text-sm font-semibold text-white/90 drop-shadow">{branding.schoolName}</span>
-      </nav>
-      <div className="relative mx-auto flex min-h-screen w-full max-w-7xl items-center justify-center px-6 py-24 text-center sm:px-10 lg:px-12">
-        <div className="flex max-w-4xl animate-fade-up flex-col items-center space-y-8">
-          <div className="space-y-6">
-            <h1 className="max-w-4xl text-5xl font-semibold tracking-tight text-white sm:text-6xl lg:text-7xl">
-              {heroContent.title}
-            </h1>
-            <p className="max-w-3xl text-xl font-medium text-[#f0d8c8] sm:text-2xl">
-              {heroContent.subtitle}
-            </p>
-            <p className="max-w-3xl text-base leading-8 text-slate-200 sm:text-lg">
-              {heroContent.description}
-            </p>
-          </div>
-          <div className="flex flex-col items-center gap-4 sm:flex-row">
-            <SiteButton href={heroContent.primaryAction.href}>{heroContent.primaryAction.label}</SiteButton>
-            <SiteButton href={heroContent.secondaryAction.href} variant="outline">
-              {heroContent.secondaryAction.label}
-            </SiteButton>
-          </div>
-        </div>
-      </div>
-    </section>
   );
 }
 
@@ -167,7 +119,7 @@ export function OverviewSection() {
     <section id="overview" className="bg-[#f5efe4] py-20 sm:py-24">
       <div className="mx-auto grid w-full max-w-7xl gap-10 px-6 sm:px-10 lg:grid-cols-[1.05fr_0.95fr] lg:px-12">
         <div className="relative min-h-[320px] overflow-hidden rounded-[2rem] shadow-xl shadow-[#183f7a]/15">
-          <Image src={overviewContent.image} alt={overviewContent.title} fill className="object-cover" />
+          <Image src={overviewContent.image} alt={overviewContent.title} fill sizes="(max-width: 768px) 100vw, 50vw" quality={70} className="object-cover" />
         </div>
         <div className="flex items-center justify-center">
           <div className="flex max-w-2xl flex-col items-center space-y-6 text-center">
@@ -239,7 +191,7 @@ export function ProgramsSection() {
           {programs.map((program) => (
             <article key={program.title} className="group overflow-hidden rounded-[1.75rem] border border-[#dfd2c3] bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-[#183f7a]/12">
               <div className="relative aspect-[5/4] overflow-hidden">
-                <Image src={program.image} alt={program.title} fill className="object-cover transition duration-500 group-hover:scale-105" />
+                <Image src={program.image} alt={program.title} fill sizes="(max-width: 768px) 100vw, 33vw" quality={70} className="object-cover transition duration-500 group-hover:scale-105" />
               </div>
               <div className="space-y-4 p-6">
                 <h3 className="text-2xl font-semibold text-[#102a56]">{program.title}</h3>
@@ -278,6 +230,8 @@ export function FacilitiesSection() {
                   src={facility.image}
                   alt={facility.title}
                   fill
+                  sizes="(max-width: 768px) 100vw, 20vw"
+                  quality={70}
                   className="object-cover transition duration-700 group-hover:scale-110"
                 />
               </div>
@@ -324,6 +278,7 @@ export function CampusTourSection() {
           <video
             className="aspect-video w-full object-cover"
             controls
+            preload="none"
             poster={tourContent.poster}
           >
             <source src={campusTourVideoUrl} type="video/mp4" />
@@ -399,7 +354,7 @@ export function NewsSection() {
               className="group overflow-hidden rounded-[1.75rem] border border-[#dfd2c3] bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-[#183f7a]/12"
             >
               <div className="relative aspect-[5/4] overflow-hidden">
-                <Image src={item.image} alt={item.title} fill className="object-cover transition duration-500 group-hover:scale-105" />
+                <Image src={item.image} alt={item.title} fill sizes="(max-width: 768px) 100vw, 33vw" quality={70} className="object-cover transition duration-500 group-hover:scale-105" />
               </div>
               <div className="space-y-4 p-6">
                 <h3 className="text-2xl font-semibold text-[#102a56]">{item.title}</h3>
@@ -481,7 +436,7 @@ export function FooterSection() {
         <div className="flex flex-col items-center space-y-5">
           <div className="flex flex-col items-center gap-4">
             <div className="relative h-16 w-16 overflow-hidden rounded-full border border-[#dfd2c3] bg-white shadow-sm">
-              <Image src={branding.logo} alt={branding.schoolName} fill className="object-contain p-2" />
+              <Image src={branding.logo} alt={branding.schoolName} fill quality={80} className="object-contain p-2" />
             </div>
             <span className="text-sm font-semibold uppercase tracking-[0.24em] text-[#a32638]">
               {branding.schoolName}
