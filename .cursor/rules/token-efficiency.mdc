@@ -1,0 +1,14 @@
+---
+description: Keep agent edits concise and token-efficient for this frontend-only project
+alwaysApply: true
+---
+
+# Token Efficiency
+
+- Keep responses brief unless the user asks for detail.
+- Read only the files needed for the current task.
+- Prefer focused single-file edits when practical.
+- Avoid repeating summaries of unchanged work.
+- Centralize homepage content in `lib/site-content.ts`.
+- Preserve the static frontend-only architecture unless the user asks for backend work.
+- Reuse existing section and UI components before creating new ones.
