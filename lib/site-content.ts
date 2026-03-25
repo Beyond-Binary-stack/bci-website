@@ -74,7 +74,7 @@ export const trustItems: TrustItem[] = [
 ];
 
 export const overviewContent = {
-  image: "/BC/building2.jpg",
+  image: "/BC/building1.jpg",
   title: "A School Community Built For Growth",
   description:
     "British Canadian International School is committed to providing high-quality education in a supportive and diverse learning environment. Our mission is to nurture students academically, socially, and personally.",
@@ -115,12 +115,12 @@ export const facilities: MediaCard[] = [
   {
     title: "Science Laboratories",
     description: "Hands-on spaces that encourage experimentation and problem solving.",
-    image: "/BC/student%20in%20Lap1.jpg",
+    image: "/BC/student%20in%20Lap2.jpg",
   },
   {
     title: "Computer Labs",
     description: "Digital resources that support innovation and modern learning.",
-    image: "/BC/student%20in%20Lap2.jpg",
+    image: "/BC/student%20in%20Lap1.jpg",
   },
   {
     title: "Library",
@@ -152,7 +152,7 @@ export const studentLife: MediaCard[] = [
   {
     title: "Sports Activities",
     description: "Students build confidence, discipline, and teamwork through sports.",
-    image: "/BC/sports2.jpg",
+    image: "/BC/Sports.jpg",
   },
   {
     title: "School Events",
